@@ -1,0 +1,66 @@
+---
+title: "Wildlife Strikes To AirCrafts In US"
+subtitle: "Analysis & Study Via Visualization"
+author: "Kumudini Bhave"
+date: "March 25, 2018"
+output: 
+  ioslides_presentation: 
+    highlight: espresso
+    logo: sps2.png
+    css : finalproposal.css
+    self_contained: yes
+runtime: shiny
+---
+
+
+
+
+## Rationale
+
+
+**The World is a smaller place today and getting smaller with every new point connected by shorter hops on newer planes.**
+
+**Flying is not dangerous, but crashing is ! As everthing that is a wonder has a point to ponder as well, we have airport & airtravel safety that drives us to pause and consider it important to take a look at our environment, whereabouts and the nature's course.**
+
+**During the past century, wildlife-aircraft strikes have resulted in the loss of hundreds of lives worldwide, as well as billions of dollars in aircraft damage. The FAA (Federal Aviation Administration) maintains a comprehensive program to address wildlife hazards. Through policy and guidance, research and outreach, it strives to stay ahead of the issue.**
+
+
+
+
+
+## ..continued..
+
+
+**A look at the seasonal pattern of the wildlife strikes may throw some light on the relevance of its association with the migration pattern of birds/ the proximity to shore etc.**
+
+**In this analysis, I intend to study the impact of wildlife strikes that have impacted / stranded many a planes and at times even cost the industry monetorily  .**
+
+## Points To Ponder Via Visuals
+
+
+**Hope to understand,**
+
+**- Which airports in the United States are the most impacted**
+
+**- The phase of flights, collision date/time (period of year) and time of day relation, if relevant.**
+
+**- I hope to animate for the time period to see the increase /decrease in the incidents**
+
+
+## Data Sources And Tools
+
+
+**- Primarily datasets of WildLife Strikes are derived from FAA (Federal Aviation Administration) primarily in csv /xls formats**
+https://wildlife.faa.gov/
+
+https://public.tableau.com/s/sites/default/files/media/faa_data_subset.xlsx
+
+**The FAA Wildlife Strike Database under study contains records of reported wildlife strikes since 2000. Strike reporting is voluntary. Therefore, this database only represents the information that has been received from airlines, airports, pilots, and other sources.**
+
+**- The primary technologies that I plan to use is R / Shiny , Plotly or ggplot/ ggmap gganimate, as per which provides a better understanding  ** 
+
+
+
+
+
+
