@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+    
+    Note :
+
+        This is an example od D3 js.
+
+        This document displays the presidents physique data ( name , height and weight), loaded from presidents.csv.
+        The table is hoverable
+
+        
+        It also allows for taking an input of presidents name and shows the physique stats for that president.
+
+        To see this as a webpage, you have to start a *Local Web Server*. There are many ways to do this: since you all have python installed, we will use python.
+
+        - Open terminal
+
+        - 'cd' into the directory where this html file is (i_index.html)
+
+        - Type the following into the terminal and hit 'enter':
+            python -m http.server 8000 &.
+
+            the server should read something like: Serving HTTP on 0.0.0.0 port 8000 ...
+
+        - now go to any browser and type in the HTTP address and the filename: something like:
+
+            http://0.0.0.0:8000/i_index.html
+
+            or
+
+            http://localhost:8000/i_index.html
+        
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Intermediate Problem Solving in D3JS </title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.min.js"></script>
+        <link rel ="stylesheet" href ="itable.css">
+    <body>
+    
+    <h1>Intermediate Problem Solving in D3JS</h1>
+
+    <!-- Here we load the csv and display the data in table format at the addTable DIV tag -->
+
+    <script type="text/javascript">
+         document.write('<p><h3>Loading Presidents Data...</h3></p>');
+    </script>
+    <script type="text/javascript" src="./loadcsv.js"></script>
+    <form>
+    
+    <br> <br>
+    <div id="addtable"></div>
+
+    <script type ="text/javascript">
+
+    //The function pointit() gets the record from the dataset for the president matching entered text
+    
+    pointit = function(){
+        var t= document.getElementById("target");
+
+        var whichpresi = document.getElementById('pstring').value;
+
+        
+        var chktable = document.getElementById("addtable")
+        
+        var presiht ='';
+
+        var presiwt = '';
+
+        for(var i=0; i<dataset.length; i++) {
+
+            
+            if(dataset[i].Name == whichpresi) {
+               // document.write("true");
+               // document.write(dataset[i].Name);
+                presiht = dataset[i].Height;
+                presiwt = dataset[i].Weight;
+                //document.write(presiht);
+                //document.write(presiwt);
+                
+            }
+
+        }
+
+        // Returns the data for the president
+        var retstr =    whichpresi + ' is ' +  presiht + ' inches tall  and  has a healthy weight of ' + presiwt + ' lbs.'
+
+
+        t.innerHTML = retstr
+     
+    }
+
+    </script>
+    
+
+    <br> <br>
+    <script type="text/javascript">
+        document.write('<p>Please Enter The President Name :</p><br>');
+
+    </script>
+
+    <input type="text" id="pstring"/>
+    <input type="button" value="Point It!" onClick="pointit();">
+    <br> <br>
+    <em><div id="target" style="color: red; "></div></em>
+    <br><br>
+    </form>
+
+
+    </body>
+</html>
+
+
+<!-- I wanted to highlight the record of that president in the table but could not get through -->
+
+
+
+
+

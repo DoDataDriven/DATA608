@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+    
+    Note :
+
+        This is an example od D3 js.
+
+        The first problem takes any string and provides the REVERSE output of the same.
+        
+        The second problem takes any number and provides the first 20 multiples of the number , 4 in a row and in 5 rows.
+
+
+        To see this as a webpage, you have to start a *Local Web Server*. There are many ways to do this: since you all have python installed, we will use python.
+
+        - Open terminal
+
+        - 'cd' into the directory where this html file is (b_index.html)
+
+        - Type the following into the terminal and hit 'enter':
+            python -m http.server 8000 &.
+
+            the server should read something like: Serving HTTP on 0.0.0.0 port 8000 ...
+
+        - now go to any browser and type in the HTTP address and the filename: something like:
+
+            http://0.0.0.0:8000/b_index.html
+
+            or
+
+            http://localhost:8000/b_index.html
+        
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Beginners Problem Solving in D3JS </title>
+        <style>
+            table, td {
+                border: 1px solid red;
+                margin: 0;
+                text-align: left;
+            }
+            .nowrap {
+              white-space: nowrap;
+            }
+            table {
+                text-align: center;
+            }
+        </style>
+    <body>
+
+    <h1>Beginners Problem Solving in D3JS</h1>
+
+    <script type="text/javascript">
+
+        document.write('<p><h3>Word Reversal</h3></p>');
+        document.write('<p>Please Enter Anything !</p><br>');
+
+    </script>
+
+
+    <script type ="text/javascript">
+
+    //The function reverseit() reverses the string input.
+
+    reverseit = function(){
+        var t= document.getElementById("target");
+
+        var strtorev = document.getElementById('istring').value;
+
+        var revstr = '';
+
+        for(var i=strtorev.length-1; i>=0; i--) {
+            revstr = revstr + strtorev[i];
+        }
+
+        t.innerHTML = revstr
+
+    }
+
+
+    //The function reverseitnow() reverses the string input using inbuilt functions of array split reverse and join
+    reverseitnow = function(){
+        var t= document.getElementById("target");
+
+        var strtorev = document.getElementById('istring').value;
+
+        var revstr = '';
+        revstr = strtorev.split("").reverse().join("");
+        t.innerHTML = revstr
+     
+    }
+
+
+    // Function to calculate the 20 times table of a number
+
+    gettable = function(){
+        
+        var tableofnum = document.getElementById('inum').value;
+
+        var tablearray = [];
+
+
+        for(var i=1; i<=20; i++) {
+            itimesnum = tableofnum * i;
+            tablearray.push( itimesnum);
+        }
+
+        
+
+        var numtable = document.createElement("table");
+        numtable.width = '25%' ;
+        numtable.cellSpacing = '0' ;
+        numtable.frame='box';
+        numtable.createCaption();
+        numtable.innerHTML="<b>Times Table</b>"
+     
+        
+        
+        for(var i=0; i<tablearray.length; i=i+4) {
+            
+            
+                var row = numtable.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                
+                cell1.innerHTML = tablearray[i];
+                cell2.innerHTML = tablearray[i+1];
+                cell3.innerHTML = tablearray[i+2];
+                cell4.innerHTML = tablearray[i+3];
+
+
+
+            
+
+        }
+    
+    document.getElementById("addtable").appendChild(numtable).style.color = "red";
+    }
+
+
+    </script>
+
+
+  
+
+    <form>
+    <input type="text" id="istring"/>
+    <input type="button" value="Reverse It!" onClick="reverseitnow();">
+    <br> <br>
+    <b> Reversed String : </b>
+    <em><div id="target" style="color: red; "></div></em>
+
+
+    <br>
+    <br>    
+
+    <script type="text/javascript">
+
+        document.write('<p><h3>Number Table</h3></p>');
+        document.write('<p>Please Enter Any Number !</p><br>');
+
+    </script>
+    <input type="number" id="inum"/>
+    <input type="button" value="Get Table!" onClick="gettable();">
+    <br> <br>
+    <div id="addtable"></div>
+
+
+
+    </form>
+
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
