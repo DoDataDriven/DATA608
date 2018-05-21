@@ -1,0 +1,141 @@
+---
+title: 'WildLife Strike Air Flights In US'
+author: "Kumudini Bhave"
+date: "May 15, 2018"
+output:
+  ioslides_presentation:
+    css: finalproposal.css
+    highlight: espresso
+    logo: sps2.png
+    self_contained: yes
+runtime: shiny
+subtitle: Analysis & Study Via Visualization
+resource_files:
+- im3.png
+- im3.png
+---
+
+
+
+
+## Rationale
+
+**The World is a smaller place today and getting smaller with every new point connected by shorter hops on newer planes.**
+
+**Flying is not dangerous, but crashing is ! As everthing that is a wonder has a point to ponder as well, we have airport & airtravel safety that drives us to pause and consider it important to take a look at our environment, whereabouts and the nature's course.**
+
+**During the past century, wildlife-aircraft strikes have resulted in the loss of hundreds of lives worldwide, as well as billions of dollars in aircraft damage. The FAA (Federal Aviation Administration) maintains a comprehensive program to address wildlife hazards. Through policy and guidance, research and outreach, it strives to stay ahead of the issue.**
+
+## Miracle on the Hudson
+
+**(January 2009) US Airways Flight 1549 had lost power from both engines after the engines ingested a flight of Canadian geese**
+
+**Areas Of Strikes : It could be engine / landing gear / windshield**
+
+## ..continued..
+
+
+**In this analysis, I intend to study the impact of wildlife strikes that have impacted / stranded many a planes and at times even cost the industry monetorily  .**
+
+**A look at the seasonal pattern of the wildlife strikes may throw some light on the relevance of its association with the migration pattern of birds/ the proximity to shore etc.**
+
+
+## Data Sources And Tools
+
+
+**- Primarily datasets of WildLife Strikes are derived from FAA (Federal Aviation Administration) primarily in csv /xls formats**
+https://wildlife.faa.gov/
+
+https://public.tableau.com/s/sites/default/files/media/faa_data_subset.xlsx
+
+**The FAA Wildlife Strike Database under study contains records of reported wildlife strikes since 2000. Strike reporting is voluntary. Therefore, this database only represents the information that has been received from airlines, airports, pilots, and other sources.**
+
+**- The primary technologies that I plan to use is R / Shiny ,ggplot/ leaflet /sunburstR libraries.**
+
+
+## Steps , Challenges & Considerations 
+
+- The Wildlife Strike data is more of a visualization data, with many factors to visualize. There have been challenges primarily in application of the various libraries along with the learning curve involved .
+
+- The Data does have NAs, where in the Phase Of Flight when the strike happened or the Time Of Day ( Dawn, Day, Dusk, Night ) do ahve quite some unknown values.
+These have been handled as Unknown categories as the strike still did happen.
+
+- The wildlife itself is grouped into Birds/ Terrestrials/Reptiles/ Bats but Birds further have Species group(Perching Birds), /Species order(Larks, Finches, Grackles, Sparrows) and Species(Horned lark) itself which mentions who actually strikes.The groupings caused bit of issue in sunburst charts .
+
+## continued
+
+- This analysis has taken into account the actual species for its study.
+
+- Visualization concepts small multiples, high data-ink,  zooming panning,tooltips  through map chorophleths, aethetics & techniques through sunbursts, a certain drill down /crossfiltering for pulling up species for month wise data and then a bit of chart junk at dashboard level tohighlight the concept.
+
+
+## **Phase Of Flight - Time Of Day - Animal Category**
+
+- Denotes No of Strikes
+
+- The primary strikers are the birds for the main phases Approach , Landing roll Take Off , Climb
+
+- In each , day time is prime time 
+
+
+
+## **Animal Category - Phase Of Flight - Flight Impact - Damage Level**
+
+- Denotes the Cost in Dollars
+
+- Flight Impact : Aborted Take Off / Engine Shut down / None / Other/ Precautionary Landing/ Unknown
+
+- Damage Level : Destroyed / Menium / Minor / None / Substantial
+
+- At Climb level, which is level  where birds could be found flying, we do not see much in air strike 
+and Aborted Take Off Of Precautionary Landing and the impacts and most of the times it leads to Substantial costs
+
+## Chorophleths
+
+Shows the Strikes Vs Cost plots for States and respective airports over the years
+
+
+## State - Month Wise Plots
+
+Month wise across all years for different states, that demark seasons to find the pattern of increased strikes during fall , late spring seasons. eg Montana  which is a northern state , 
+
+- Birds migrate to move from areas of low or decreasing resources to areas of high or increasing resources. The two primary resources being sought are food and nesting locations.
+
+
+## continued
+
+- Birds that nest in the Northern Hemisphere tend to migrate northward in the spring to take advantage of burgeoning insect populations, budding plants and an abundance of nesting locations. As winter approaches and the availability of insects and other food drops, the birds move south again.
+
+Long-distance migrants typically move from breeding ranges in the United States and Canada to wintering grounds in Central and South America. 
+
+
+## **Factors that are now managed and should be managed**
+
+ - habitat management : reduces the area where birds hang out, lines running overhead etc
+ - manage grass height /  species of grass , research is being made as to what type of grass birds dont like to eat
+ 
+ - Airfield posts have special caps to keep of birds
+ 
+ - fire some kind of air cracker to keep them off
+ 
+
+
+## What more could be done
+
+- More Interactive multi factor-drill down charts could be done 
+
+
+## References
+
+-https://public.tableau.com/en-us/s/gallery/bird-strikes
+
+-Stackoverflow
+
+-https://www.massaudubon.org/learn/nature-wildlife/birds/seasonal-changes-in-bird-populations
+
+-https://www.r-bloggers.com/
+
+-http://enhancedatascience.com/2017/07/06/pick-best-r-packages-interactive-plot-visualisation-22/
+
+-https://www.cnn.com/2016/09/09/us/sully-sullenberger-miracle-hudson-bird-strike-prevention/index.html
+
